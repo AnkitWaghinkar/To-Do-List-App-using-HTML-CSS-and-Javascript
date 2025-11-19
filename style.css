@@ -1,0 +1,143 @@
+:root{
+    --background-color:#F5F5F7;
+    --toDo-container-color: #FFFFFF; 
+    --accent-color: #FF6F42;    
+    --accent-hover: #e85d2f;  
+    --title-text: #0b3b88; 
+    --text-color: #333;  
+    --border-color: #DDD;   
+    --row-bg: #edeef0;   
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100dvh;
+    background-color: var(--background-color);
+}
+
+.container{
+    min-height: 60dvh;
+    width: 100%;
+    padding: 0.625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 33.75rem;
+    margin: 5rem auto 1.25rem;
+    padding: 2.5rem 1.875rem 3.125rem;
+    border-radius: 0.625rem;
+    border: 0.1rem solid var(--border-color);
+    background-color: var(--toDo-container-color);
+    box-shadow: -5px -10px 15px rgba(255, 255, 255, 0.5),
+                5px 10px 15px rgba(70, 70, 70, 0.356);
+}
+
+.todo-app p{
+    color: var(--title-text);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.todo-app p img{
+    width: 1.875rem;
+    margin-left: 0.7rem;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--row-bg);
+    border-radius: 1.875rem;
+    padding-left: 1.25rem;
+    margin-bottom: 1.563rem;
+    border: 0.1rem solid var(--border-color);
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.625rem;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 1rem 3.125rem;
+    color: var(--toDo-container-color);
+    background-color: var(--accent-color);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 2.5rem;
+    transition: all 0.2s linear;
+}
+
+button:hover{
+    background-color: var(--accent-hover);
+}
+
+ul li{
+    list-style: none;
+    font-size: 1.063rem;
+    padding: 0.75rem 0.5rem 0.75rem 3.125rem;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: "";
+    position: absolute;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-image: url(Images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 0.75rem;
+    left: 0.5rem;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(Images/check.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 0.313rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.375rem;
+    text-align: center;
+    color: var(--text-color);
+    line-height: 2.28rem;
+    border-radius: 50%;
+}
+
+ul li span:hover{
+    background-color: var(--row-bg);
+}
